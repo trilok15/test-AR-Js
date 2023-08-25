@@ -1,93 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Castrol</title>
-  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    
+    <script>
+      window.onload = function () {
+        document
+          .querySelector(".image1")
+          .addEventListener("click", function () {
+            // here you can change also a-scene or a-entity properties, like
+            // changing your 3D model source, size, position and so on
+            // or you can just open links, trigger actions...
+            alert("Hi there!");
+          });
+      };
+    </script>
+    
+    <link rel="stylesheet" href="style.css">
   
+    </style>
+  </head>
+ 
+  <body>
 
+    <!-- <div class="images-collection">
+      <img src="./images/victoria-peak-ar.jpg" alt="" class="image1" />
+      <img src="./images/disneyland-hk-ar.jpg" alt="" class="image2" />
+      <img src="./images/macau-tower-ar.jpg" alt="" class="image3" />
+      <img src="./images/venetian-macao-ar.jpg" alt="" class="image4" />
+    </div> -->
+
+    <a-scene>
+      <a-assets>
+        <img src="./images/victoria-peak-ar.jpg" alt="" class="image1" />
+        <img src="./images/disneyland-hk-ar.jpg" alt="" class="image2" />
+        <img src="./images/macau-tower-ar.jpg" alt="" class="image3" />
+        <img src="./images/venetian-macao-ar.jpg" alt="" class="image4" />
+      </a-assets>
+    </a-scene>
+     
+    <a-scene embedded arjs>
+      <a-marker-camera preset='custom' type='pattern' url='./assets/pattern-Nayara-QR.patt'></a-marker-camera>
+    </a-scene>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-  <script src="script.js"></script>
-</body>
-</html>
-
-<!-- <!DOCTYPE html>
-<html>
-  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-  //we import arjs version without NFT but with marker + location based support
-  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-  <script>
-    window.onload = function () {
-      document
-        .querySelector(".say-hi-button")
-        .addEventListener("click", function () {
-          // here you can change also a-scene or a-entity properties, like
-          // changing your 3D model source, size, position and so on
-          // or you can just open links, trigger actions...
-          alert("Hi there!");
-        });
-    document
-        .querySelector(".say-hello-button")
-        .addEventListener("click", function () {
-          // here you can change also a-scene or a-entity properties, like
-          // changing your 3D model source, size, position and so on
-          // or you can just open links, trigger actions...
-          alert("Hello there!");
-        });
-    document
-        .querySelector(".say-bye-button")
-        .addEventListener("click", function () {
-          // here you can change also a-scene or a-entity properties, like
-          // changing your 3D model source, size, position and so on
-          // or you can just open links, trigger actions...
-          alert("Bye there!");
-        });
-    };
-  </script>
-  <style>
-    .buttons {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 5em;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 10;
-    }
-
-    .say-hi-button {
-      padding: 0.25em;
-      border-radius: 4px;
-      border: none;
-      background: white;
-      color: black;
-      width: 4em;
-      height: 2em;
-    }
-  </style>
-  <body style="margin : 0px; overflow: hidden;">
-    <div class="buttons">
-      <button class="say-hi-button">SAY HI!</button>
-      <button class="say-hello-button">SAY Hello!</button>
-      <button class="say-bye-button">SAY bye!</button>
-    </div>
-    <a-scene embedded arjs>
-      <a-marker preset="hiro">
-        <a-entity
-          position="0 0 0"
-          scale="0.05 0.05 0.05"
-          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
-        ></a-entity>
-      </a-marker>
-      <a-entity camera></a-entity>
-    </a-scene>
   </body>
-</html> -->
+</html>
